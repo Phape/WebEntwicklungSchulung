@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>All Cats</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="about.html">News</a></li>
+            <li><a href="contact.html">About</a></li>
+            <li><a href="all-cats.html">All Cats</a></li>
+        </ul>
+    </nav>
+    <ul id="cats-list">
+    </ul>
+    <input type="text" name="cat-input" id="cat-input-field">
+    <button id="add-cat-button">Add Cat</button>
+
+    <script>
+        const $catsList = document.getElementById('cats-list');
+        const $catInputField = document.getElementById('cat-input-field');
+        let counter = 1;
+
+        document.getElementById('add-cat-button').addEventListener('click', function() {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode("Cat " + counter + " - " + $catInputField.value));
+            $catsList.append(li);
+            counter++;
+            $catInputField.value = "";
+        });
+    </script>
+    
+</body>
+</html>
